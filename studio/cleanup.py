@@ -317,7 +317,10 @@ def plan(repo_root: str, videos_dir: Optional[str] = None, older_than_s: int = D
 
 def _plan_project(report: Dict, repo_root: str, videos_dir: str, project: str,
                   older_than_s: int, now: float) -> None:
-    rel_project = os.path.relpath(project, repo_root)
+    try:
+        rel_project = os.path.relpath(project, repo_root)
+    except ValueError:  # Windows: project and repository on different drives
+        rel_project = os.path.abspath(project)
     state_ok, cur12, note = _current_hash(project)
     report["projects"].append({
         "project": rel_project,

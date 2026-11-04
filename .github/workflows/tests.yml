@@ -47,7 +47,8 @@ jobs:
       # are skipped here: they need npx hyperframes and Chrome.
       - name: Run test suites
         run: |
-          set -e
+          failed=""
           for d in studio design timing narration review costgate reference tools templates/tech-news-ar/tools; do
-            python -m unittest discover -s "$d/tests"
+            python -m unittest discover -s "$d/tests" || failed="$failed $d"
           done
+          if [ -n "$failed" ]; then echo "Failed suites:$failed"; exit 1; fi

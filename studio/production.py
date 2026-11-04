@@ -290,7 +290,7 @@ def check_build(project: str, brief: Dict) -> List[Dict]:
             # HyperFrames resolves CSS url() from the project root; accept either base.
             cands = [os.path.normpath(os.path.join(b, ref)) for b in (project, os.path.dirname(path))]
             if not any(os.path.exists(c) for c in cands):
-                missing.add(os.path.relpath(cands[0], project))
+                missing.add(os.path.relpath(cands[0], project).replace(os.sep, "/"))
     for m in sorted(missing):
         f.append(prerender.finding(prerender.ERROR, "missing_asset", "referenced file does not exist",
                                    source="build", prop=m))
