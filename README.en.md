@@ -269,8 +269,9 @@ Topic documents: [`PRODUCTION.md`](PRODUCTION.md),
 ## Known limitations
 
 - Documentation and templates assume Arabic output and a tech-news/explainer format.
-- Developed on macOS. The test suites pass in CI on Ubuntu and macOS, and the
-  quick start renders on Linux. Windows is untested.
+- Developed on macOS. The test suites pass in CI on Ubuntu, macOS and Windows,
+  and the quick start renders on Linux. Rendering a video on Windows has not
+  been tried yet; WSL is the safe route there for now.
 - Rendering needs network access (npx, GSAP CDN).
 - Run from a clone; there is no installable package.
 - Cost tracking depends on usage data the agent or provider reports.
