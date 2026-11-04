@@ -354,7 +354,8 @@ def render_dry_run(eligible: list[ProjectStatus], skipped: list[ProjectStatus],
 
 # --------------------------------------------------------------------------- execution
 def _fsync_file(path: Path) -> None:
-    fd = os.open(str(path), os.O_RDONLY)
+    # Windows only allows fsync on a handle opened for writing.
+    fd = os.open(str(path), os.O_RDWR if os.name == "nt" else os.O_RDONLY)
     try:
         os.fsync(fd)
     finally:

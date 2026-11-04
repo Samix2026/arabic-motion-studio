@@ -70,7 +70,7 @@ class TestBoundary(unittest.TestCase):
         argv = captured["argv"]
         kwargs = captured["kwargs"]
         self.assertIsInstance(argv, list)
-        self.assertTrue(argv[0].endswith("ffprobe"))
+        self.assertEqual("ffprobe", os.path.splitext(os.path.basename(argv[0]))[0])  # ffprobe.exe on Windows
         self.assertFalse(kwargs.get("shell", False))
         self.assertEqual(self.tmp, kwargs["cwd"])
 
