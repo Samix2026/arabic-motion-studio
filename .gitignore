@@ -55,11 +55,12 @@ tests/**/production/
 **/contact-sheet.jpg
 **/contact-sheet.png
 
-# Rendered media (demo media is published outside Git)
+# Rendered media (only the README intro under assets/ is tracked)
 *.mp4
 *.mov
 *.webm
 *.mkv
+!/assets/intro.mp4
 
 # Generated review artifacts
 review/vision_inputs/

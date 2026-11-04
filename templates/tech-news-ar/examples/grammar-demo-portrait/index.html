@@ -8,7 +8,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
-    <title>NVIDIA robotaxi stack - grammar demo (portrait)</title>
+    <title>Motion Studio pipeline - grammar demo (portrait)</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <script src="lib/motion.js"></script>
     <link rel="stylesheet" href="lib/type.css" />
@@ -30,18 +30,27 @@
       }
       :root {
         /* brand:start — brands/nvidia.json */
-        --brand-primary: #76b900;
-        --brand-secondary: #000000;
-        --brand-background: #0a0d07;
-        --brand-background-gradient: radial-gradient(120% 90% at 50% 28%, #16200c 0%, #0c1109 55%, #080a06 100%);
-        --brand-surface: #14180f;
-        --brand-text: #f2f5ee;
-        --brand-muted: #93a087;
-        --brand-border-color: #243019;
-        --brand-radius: 18px;
-        --brand-headline-tracking: -0.01em;
-        --brand-highlight-color: #a3d43f;
-        --brand-credit-color: #a3ad98;
+  --brand-primary: #ffffff;
+  --brand-secondary: #9c9c9c;
+  --brand-background: #0a0a0a;
+  --brand-background-gradient: radial-gradient(120% 90% at 50% 28%, #181818 0%, #0d0d0d 55%, #0a0a0a 100%);
+  --brand-surface: #121212;
+  --brand-text: #dcdcdc;
+  --brand-muted: #9c9c9c;
+  --brand-accent-gradient: linear-gradient(135deg, #ffffff 0%, #a6a6a6 100%);
+  --brand-border-color: #2a2a2a;
+  --brand-border-width: 2px;
+  --brand-border-style: solid;
+  --brand-radius: 26px;
+  --brand-gap: 40px;
+  --brand-image-fit: cover;
+  --brand-image-position: center;
+  --brand-image-scale: 1;
+  --brand-headline-weight: 700;
+  --brand-headline-tracking: -0.01em;
+  --brand-highlight-color: #ffffff;
+  --brand-credit-color: #8c8c8c;
+  --brand-progress-fill: #ffffff;
         /* brand:end */
       }
       * {
@@ -85,9 +94,9 @@
       <section id="p1" class="clip g-scene" data-grammar="kinetic_word" data-variant="stack" data-beat-kind="hook" data-start="0" data-duration="4.5" data-track-index="1">
         <div class="g">
           <p id="p1w" class="t-display g-words">
-            <span class="w">الروبوتاكسي</span><span class="w">لا</span><span class="w">يعتمد</span><span class="w">على</span><span class="w hl">شريحة واحدة</span><span class="w">فقط</span>
+            <span class="w">فيديو</span><span class="w">عربي</span><span class="w">كامل</span><span class="w">من</span><span class="w hl">ملف واحد</span>
           </p>
-          <p id="p1s" class="t-secondary">تريد NVIDIA أن تكون موجودة في كل مرحلة من بناء السيارة الذاتية</p>
+          <p id="p1s" class="t-secondary">كل مشهد كود، وكل حركة على خط زمني واحد</p>
         </div>
       </section>
 
@@ -97,8 +106,8 @@
           <figure class="g-media" id="p2media"><img src="assets/placeholder-hero.svg" alt="" /></figure>
           <div class="g-scrim"></div>
           <div class="g-text" id="p2t">
-            <h2 class="t-headline">ادعاء NVIDIA: الحضور في كل مرحلة</h2>
-            <p class="t-secondary">تقول الشركة إن كل برنامج روبوتاكسي رئيسي يعمل تجاريا اليوم يستخدم منظومتها</p>
+            <h2 class="t-headline">النص يشرح الصورة</h2>
+            <p class="t-secondary">قاعدة الأولوية للصورة: المشاهد ترى شيئا في كل مشهد</p>
           </div>
         </div>
       </section>
@@ -106,41 +115,41 @@
       <!-- 3 — screenshot_detail · product_visual (crop, pan between regions, spotlight) -->
       <section id="p3" class="clip g-scene" data-grammar="screenshot_detail" data-variant="framed" data-beat-kind="product_visual" data-start="9.5" data-duration="7.5" data-track-index="3">
         <div class="g">
-          <h2 id="p3h" class="t-headline">طبقات المنظومة</h2>
+          <h2 id="p3h" class="t-headline">تقرير الإنتاج</h2>
           <div class="g-shot" id="p3shot" style="--shot-ar: 1920 / 1080">
             <div class="g-canvas">
               <img src="assets/placeholder-stack.svg" alt="" />
               <div class="g-spot" id="p3spot" data-region="0.53,0.71,0.29,0.195"></div>
             </div>
           </div>
-          <p id="p3c" class="t-caption">من Cosmos إلى DRIVE Hyperion مع DRIVE AGX</p>
-          <p class="t-credit">المصدر: NVIDIA</p>
+          <p id="p3c" class="t-caption">كل مرحلة إما تنجح أو توقف الإنتاج</p>
+          <p class="t-credit">المصدر: دليل العمل</p>
         </div>
       </section>
 
       <!-- 4 — big_number · statistic -->
       <section id="p4" class="clip g-scene" data-grammar="big_number" data-variant="offset" data-beat-kind="statistic" data-start="17" data-duration="4.5" data-track-index="4">
         <div class="g">
-          <p id="p4n" class="t-stat">14</p>
+          <p id="p4n" class="t-stat">8</p>
           <div id="p4r" class="g-rule"></div>
-          <p id="p4l" class="t-stat-label">كاميرا في منصة DRIVE Hyperion</p>
-          <p id="p4s" class="t-secondary">إلى جانب 9 رادارات و3 ليدار و12 مستشعرا فوق صوتي</p>
+          <p id="p4l" class="t-stat-label">قوالب جاهزة لبناء المشاهد</p>
+          <p id="p4s" class="t-secondary">من الصورة الكاملة إلى المقارنة والرقم الكبير</p>
         </div>
       </section>
 
       <!-- 5 — comparison · comparison (stacked for portrait) -->
       <section id="p5" class="clip g-scene" data-grammar="comparison" data-variant="stacked" data-beat-kind="comparison" data-start="21.5" data-duration="6" data-track-index="5">
         <div class="g">
-          <h2 id="p5h" class="t-headline">حاسوبان من المنظومة</h2>
+          <h2 id="p5h" class="t-headline">قبل البوابات وبعدها</h2>
           <div class="g-cols">
             <div class="g-col" id="p5a">
-              <p class="t-headline">التدريب</p>
-              <p class="t-secondary">حاسوب DGX يدرب نماذج القيادة على بيانات الأسطول</p>
+              <p class="t-headline">بدون فحص</p>
+              <p class="t-secondary">شرائح مزدحمة بالنص وتصدير قبل أن يراجع أحد</p>
             </div>
             <div class="g-divider" id="p5d"></div>
             <div class="g-col is-accent" id="p5b">
-              <p class="t-headline">داخل السيارة</p>
-              <p class="t-secondary">منصة DRIVE Hyperion بحاسوب DRIVE AGX Thor مزدوج</p>
+              <p class="t-headline">مع البوابات</p>
+              <p class="t-secondary">قصة بصرية مفحوصة قبل أن يبدأ التصدير</p>
             </div>
           </div>
         </div>
@@ -149,17 +158,17 @@
       <!-- 6 — quote_or_statement · takeaway -->
       <section id="p6" class="clip g-scene" data-grammar="quote_or_statement" data-variant="center" data-beat-kind="takeaway" data-start="27.5" data-duration="3.5" data-track-index="6">
         <div class="g">
-          <p id="p6q" class="t-display g-quote">الخلاصة: NVIDIA في كل الطبقات</p>
-          <p id="p6s" class="t-secondary">من التدريب والمحاكاة إلى الحوسبة داخل السيارة</p>
+          <p id="p6q" class="t-display g-quote">الخلاصة: لكل مرحلة فحص</p>
+          <p id="p6s" class="t-secondary">من الفكرة إلى الفيديو بخطوات قابلة للفحص</p>
         </div>
       </section>
 
       <div class="g-chrome-top" id="chromeTop">
-        <span class="t-credit">تغطية مستقلة</span>
+        <span class="t-credit">مثال توضيحي</span>
         <img class="logo" src="assets/placeholder-logo.svg" alt="" />
       </div>
       <div class="g-chrome-bottom" id="chromeBottom">
-        <span class="t-credit">المصدر: NVIDIA</span>
+        <span class="t-credit">المصدر: دليل العمل في هذا المستودع</span>
       </div>
     </div>
 

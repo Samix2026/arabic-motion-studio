@@ -6,14 +6,14 @@ so small, focused changes are the easiest to review.
 ## Local setup
 
 ```bash
-git clone https://github.com/Samix2026/motion-studio.git motion-studio
-cd motion-studio
+git clone https://github.com/Samix2026/arabic-motion-studio.git
+cd arabic-motion-studio
 npx --yes hyperframes@0.8.35 doctor      # FFmpeg, FFprobe and Chrome must show ✓
 ```
 
 You need Python 3.9+, Node.js 22+, FFmpeg and Chrome. There are no Python
 dependencies to install. To author videos with an agent, install the HyperFrames
-skills as described in the README.
+skills as described in `README.en.md`.
 
 ## Tests
 
@@ -36,7 +36,7 @@ Rules for tests:
 
 ## Project structure
 
-See "Repository structure" in the README. Python packages are standard library
+See "Repository structure" in `README.en.md`. Python packages are standard library
 only; please do not add dependencies or restructure the packages.
 
 ## Workflow
